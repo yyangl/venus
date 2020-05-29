@@ -4,17 +4,15 @@ type Balance interface {
 	/**
 	 *负载均衡算法
 	 */
-	DoBalance([]*Instance, ...string) (*Instance, error)
-}
-type Instance struct {
-	host string
-	port int
+	DoBalance() (node *BlNode, err error)
+	AppendNode(node *BlNode)
+	RemoveNode(id string)
 }
 
-func (p *Instance) GetHost() string {
-	return p.host
+type BlNode struct {
+	Id   string
+	Ip   string
+	Port int
 }
 
-func (p *Instance) GetPort() int {
-	return p.port
-}
+var DefaultRandom Balance = newRandomLb()
