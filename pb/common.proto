@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+message Request {
+    map<string, string> req_data = 1;
+    string method = 2;
+}
+
+message Response {
+    int32 code = 1;
+    string msg = 2;
+    string data = 3;
+}
+
+service Srv{
+    rpc Req(Request)returns(Response);
+}
