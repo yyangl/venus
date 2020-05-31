@@ -35,6 +35,7 @@ func (r *randomLb) RemoveNode(id string) {
 	for i, n := range r.nodes {
 		if n.Id == id {
 			r.nodes = append(r.nodes[:i], r.nodes[i+1:]...)
+			r.length--
 		}
 	}
 }

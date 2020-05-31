@@ -7,6 +7,7 @@ replace github.com/coreos/bbolt v1.3.4 => go.etcd.io/bbolt v1.3.4
 replace github.com/coreos/go-systemd => github.com/coreos/go-systemd/v22 v22.0.0
 
 require (
+	github.com/coreos/bbolt v1.3.4 // indirect
 	github.com/coreos/etcd v3.3.22+incompatible
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd v0.0.0-00010101000000-000000000000 // indirect
